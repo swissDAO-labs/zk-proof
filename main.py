@@ -1,23 +1,31 @@
-from flask import Flask, request, jsonify
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
 import subprocess
 import json
+import uvicorn
 
-app = Flask(__name__)
+app = FastAPI()
 
-@app.route('/create-proof', methods=['POST'])
-def create_proof():
-    data = request.json
-    # Assuming 'data' contains the necessary information for Nargo
-    # Adjust the command based on how you use Nargo
-    result = subprocess.run(['nargo', 'create-proof', json.dumps(data)], capture_output=True, text=True)
-    return jsonify({"result": result.stdout}), 200
+class ProofRequest(BaseModel):
+    data: dict
 
-@app.route('/verify-proof', methods=['POST'])
-def verify_proof():
-    data = request.json
-    # Adjust the command based on how you use Nargo
-    result = subprocess.run(['nargo', 'verify-proof', json.dumps(data)], capture_output=True, text=True)
-    return jsonify({"result": result.stdout}), 200
+@app.post('/create-proof')
+async def create_proof(request: ProofRequest):
+    compile_result = subprocess.run(['nargo', 'build'], capture_output=True, text=True)
+    compile_result = subprocess.run(['nargo', 'compile'], capture_output=True, text=True)
+    if compile_result.returncode != 0:
+        raise HTTPException(status_code=500, detail=f"Failed to compile Noir project: {compile_result.stderr}")
+    prove_result = subprocess.run(['nargo', 'prove'], capture_output=True, text=True)
+    if prove_result.returncode != 0:
+        raise HTTPException(status_code=500, detail=f"Failed to generate proof: {prove_result.stderr}")
+    return {"result": prove_result.stdout}
 
-if __name__ == '__main__':
-    app.run(debug=True, port=8080)
+@app.post('/verify-proof')
+async def verify_proof(request: ProofRequest):
+    verify_result = subprocess.run(['nargo', 'verify', json.dumps(request.data)], capture_output=True, text=True)
+    if verify_result.returncode != 0:
+        raise HTTPException(status_code=500, detail=f"Failed to verify proof: {verify_result.stderr}")
+    return {"result": verify_result.stdout}
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="0.0.0.0", port=8080)
