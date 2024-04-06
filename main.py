@@ -11,6 +11,17 @@ class ProofRequest(BaseModel):
 
 @app.post('/create-proof')
 async def create_proof(request: ProofRequest):
+    """
+        curl -X 'POST' \
+            'http://localhost:8080/create-proof' \
+            -H 'accept: application/json' \
+            -H 'Content-Type: application/json' \
+            -d '{
+            "data": {
+                "your": "data_here"
+            }
+        }'
+    """
     compile_result = subprocess.run(['nargo', 'build'], capture_output=True, text=True)
     compile_result = subprocess.run(['nargo', 'compile'], capture_output=True, text=True)
     if compile_result.returncode != 0:
@@ -22,6 +33,18 @@ async def create_proof(request: ProofRequest):
 
 @app.post('/verify-proof')
 async def verify_proof(request: ProofRequest):
+    """
+        curl -X 'POST' \
+            'http://localhost:8080/verify-proof' \
+            -H 'accept: application/json' \
+            -H 'Content-Type: application/json' \
+            -d '{
+            "data": {
+                "proof": "proof_data_here",
+                "other_required_field": "value"
+            }
+        }'
+    """
     verify_result = subprocess.run(['nargo', 'verify', json.dumps(request.data)], capture_output=True, text=True)
     if verify_result.returncode != 0:
         raise HTTPException(status_code=500, detail=f"Failed to verify proof: {verify_result.stderr}")
