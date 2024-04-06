@@ -18,7 +18,9 @@ async def create_proof(request: ProofRequest):
             -H 'Content-Type: application/json' \
             -d '{
             "data": {
-                "your": "data_here"
+                "nonce": 123456,
+                "user_input": "sunset over mountains",
+                "image": "image_identifier_or_hash"
             }
         }'
     """
@@ -29,7 +31,11 @@ async def create_proof(request: ProofRequest):
     prove_result = subprocess.run(['nargo', 'prove'], capture_output=True, text=True)
     if prove_result.returncode != 0:
         raise HTTPException(status_code=500, detail=f"Failed to generate proof: {prove_result.stderr}")
-    return {"result": prove_result.stdout}
+    
+    # Read the proof from file: 
+    with open("./proofs/scarif.proof", "r") as fp:
+        proof = fp.read()
+    return {"proof": proof}
 
 @app.post('/verify-proof')
 async def verify_proof(request: ProofRequest):
@@ -40,8 +46,10 @@ async def verify_proof(request: ProofRequest):
             -H 'Content-Type: application/json' \
             -d '{
             "data": {
-                "proof": "proof_data_here",
-                "other_required_field": "value"
+                "nonce": 123456,
+                "user_input": "sunset over mountains",
+                "image": "image_identifier_or_hash",
+                "proof": "cryptographic_proof_here"
             }
         }'
     """
