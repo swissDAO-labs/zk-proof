@@ -1,11 +1,11 @@
-// Verification Key Hash: eb0fb0d66901c762727733aa23614e05b74e1c43341437019043f93c1a9ef09c
+// Verification Key Hash: b2380d84530c38f815414870e6935e836104a022f78d36cda56b8ad3d166737c
 // SPDX-License-Identifier: Apache-2.0
 // Copyright 2022 Aztec
 pragma solidity >=0.8.4;
 
 library UltraVerificationKey {
     function verificationKeyHash() internal pure returns(bytes32) {
-        return 0xeb0fb0d66901c762727733aa23614e05b74e1c43341437019043f93c1a9ef09c;
+        return 0xb2380d84530c38f815414870e6935e836104a022f78d36cda56b8ad3d166737c;
     }
 
     function loadVerificationKey(uint256 _vk, uint256 _omegaInverseLoc) internal pure {
@@ -14,34 +14,34 @@ library UltraVerificationKey {
             mstore(add(_vk, 0x20), 0x0000000000000000000000000000000000000000000000000000000000000020) // vk.num_inputs
             mstore(add(_vk, 0x40), 0x00eeb2cb5981ed45649abebde081dcff16c8601de4347e7dd1628ba2daac43b7) // vk.work_root
             mstore(add(_vk, 0x60), 0x30641e0e92bebef818268d663bcad6dbcfd6c0149170f6d7d350b1b1fa6c1001) // vk.domain_inverse
-            mstore(add(_vk, 0x80), 0x1dc63431afaaad2336aa1e1abb43c0221be369952695fa14420491a278dac893) // vk.Q1.x
-            mstore(add(_vk, 0xa0), 0x2494718291911c70be060cb4c8c3f51179ed9e098aaac60ddd17248c1b57d3a3) // vk.Q1.y
-            mstore(add(_vk, 0xc0), 0x0eb6afdf7affc9467188f1fa4c79c4e15389494ced9ec89813bcca3c18274fc9) // vk.Q2.x
-            mstore(add(_vk, 0xe0), 0x15d95ed43ff637dc7a2a82529b3a72ec945e9b65fd0072e35dc933b7635c6f8f) // vk.Q2.y
-            mstore(add(_vk, 0x100), 0x23559487a187a229d302ab1ba853fd2bfbfd06c7b27ecbd4fe92aa41c4be4aa0) // vk.Q3.x
-            mstore(add(_vk, 0x120), 0x18fc1347ada5a5dd8d64f1d15f2ef748af472210759c36132929223b7492e702) // vk.Q3.y
-            mstore(add(_vk, 0x140), 0x25501b6c121ed05ba9b84f4d3bc0b1a4a18446ba8b7841b57e74a4c0e974d415) // vk.Q4.x
-            mstore(add(_vk, 0x160), 0x17fe7c9f76e38af9a4ead010cd0663a25979e3ce081f061e484387008d2bf507) // vk.Q4.y
-            mstore(add(_vk, 0x180), 0x17aa7414e1ade401ec9e920061f117c894bfc3b13fecbd9baf4fa846b8a5e77e) // vk.Q_M.x
-            mstore(add(_vk, 0x1a0), 0x1eaf7750c952c905cc95c4d486de5d059c1d333171cdb27720ec2b535f69eda9) // vk.Q_M.y
-            mstore(add(_vk, 0x1c0), 0x2c59fde819bea7ebe3dd73de537f3546f76fb95c1f78c321b915824287f9efbf) // vk.Q_C.x
-            mstore(add(_vk, 0x1e0), 0x099e21bfd67f38fbdb25aa5a2944779945e4d64c1a789474284db71b41825dba) // vk.Q_C.y
-            mstore(add(_vk, 0x200), 0x0b40668fb1c69bd67cebec92157f85ea5bcf723a585c65862517c5a6ab29bd40) // vk.Q_ARITHMETIC.x
-            mstore(add(_vk, 0x220), 0x1b401d3d3ef0bef28cdd92265303c507fa8b54e21269ce69fdb41e055669b369) // vk.Q_ARITHMETIC.y
-            mstore(add(_vk, 0x240), 0x2ded77908883d36cebfcea3a536be01eecf7fe2dae0e6901a71390b26f776feb) // vk.QSORT.x
-            mstore(add(_vk, 0x260), 0x0664a3081354a2afabb35ea659df382d632a7263d4f1f4dd165b3312ccd93f79) // vk.QSORT.y
+            mstore(add(_vk, 0x80), 0x2bd5c00bcd1d13f5b6606bd533bc848e9956a928b1aa3d7d242c60e249b78c72) // vk.Q1.x
+            mstore(add(_vk, 0xa0), 0x2f5b608c70b4426148e1d01c411dc62a4ff911821abf5364f2649ba1d7056e5c) // vk.Q1.y
+            mstore(add(_vk, 0xc0), 0x29a441b56e57f8efd020f41d6b3171d04c1596af68758663438bf15d346b1032) // vk.Q2.x
+            mstore(add(_vk, 0xe0), 0x0fa482eeb9bc3fc11e9b32dc69ba7d9591113ca89ea9447d1db87725ffe20c16) // vk.Q2.y
+            mstore(add(_vk, 0x100), 0x10ca0c9e19e1641425411f63807687af98bc1785130d56768cf59e815f0b764a) // vk.Q3.x
+            mstore(add(_vk, 0x120), 0x2f6478250caf40ba47378043bd40db533f8776ee782a867580b1a302cb71de8a) // vk.Q3.y
+            mstore(add(_vk, 0x140), 0x1153029da09f39e2258659640e5eb7341708fe7cb1766d0956856e610e27cf5c) // vk.Q4.x
+            mstore(add(_vk, 0x160), 0x03996b2e8a430de6a2cfaccb73f1698024b9a7420f1a9daeb2591aa9e2024ea0) // vk.Q4.y
+            mstore(add(_vk, 0x180), 0x1a72381bdfa310fa11da1f8ae0e14c5ea9bfd06b2fac17935a882173ce04f62c) // vk.Q_M.x
+            mstore(add(_vk, 0x1a0), 0x1ebbac7ad4fbd7b2ffdd5c80828b514610bee055a539228bcf1caf03d26d2dcb) // vk.Q_M.y
+            mstore(add(_vk, 0x1c0), 0x0499f6d3eb7c3c4190b531385d952e1f361b3292889ce377c950819730740269) // vk.Q_C.x
+            mstore(add(_vk, 0x1e0), 0x0997a7e835bfac3f90c59498cc58af6adf187e6cb4aec5e91b66b68d928dbb6b) // vk.Q_C.y
+            mstore(add(_vk, 0x200), 0x205e0af21cc8db51867f5418f12d8813531d6225ed5e752fa57d8c1ff03d2300) // vk.Q_ARITHMETIC.x
+            mstore(add(_vk, 0x220), 0x0703f4fad9fc17df72a4d8733995f6a7dbd01e1135f0909063c530c939fe5bb0) // vk.Q_ARITHMETIC.y
+            mstore(add(_vk, 0x240), 0x0180c71a25ce10e9592f260ebef36c304bcac53a1719604524a35f8f74c8c35d) // vk.QSORT.x
+            mstore(add(_vk, 0x260), 0x2cf28a3e264331327e57a062a098712ac78356a1a426015d6ae22844aa75011d) // vk.QSORT.y
             mstore(add(_vk, 0x280), 0x21245d6c0a4d2ff12b21a825f39f30e8f8cf9b259448d111183e975828539576) // vk.Q_ELLIPTIC.x
             mstore(add(_vk, 0x2a0), 0x16a409532c8a1693536e93b6ce9920bfc2e6796e8dfe404675a0cdf6ee77ee7a) // vk.Q_ELLIPTIC.y
             mstore(add(_vk, 0x2c0), 0x2f213c7a4c064a63d6a07366df0ea85aef9ad2125a188c3e656f95471e416a0a) // vk.Q_AUX.x
             mstore(add(_vk, 0x2e0), 0x067a270bed55e72ffb3cfa39af3e5b8bcb4961d72bb301978af13c4ddc73e5df) // vk.Q_AUX.y
-            mstore(add(_vk, 0x300), 0x1a07a0a342681f9efd6ed45f04d6e47d8bdc46dd4bc337563d82dcd7c80faf42) // vk.SIGMA1.x
-            mstore(add(_vk, 0x320), 0x1b71967e03637d1156bd47cd91a96bd5ba3138dcd78407ab7f1eb51a35f2658f) // vk.SIGMA1.y
-            mstore(add(_vk, 0x340), 0x095c862c11d9bd691ae4124c741b9e65e699d1d4d49a6f319d78e012aba4ae61) // vk.SIGMA2.x
-            mstore(add(_vk, 0x360), 0x0d7b8e905d260e3c361df50ebaacee596018034057165de148671be0a67e7800) // vk.SIGMA2.y
-            mstore(add(_vk, 0x380), 0x0bfd9e02934a9e374378b8318607d63c593e383da3cca1ff51e926b5bbf469b7) // vk.SIGMA3.x
-            mstore(add(_vk, 0x3a0), 0x266730e4cdb3fc7e512c32cb06f5cbf878a7a3ba83e27d56fc9edaccf41c420f) // vk.SIGMA3.y
-            mstore(add(_vk, 0x3c0), 0x1891c1f186a06327d1d8cb5b6cbd7df78c189dfba4f0c7d6950f79daad7e3b8a) // vk.SIGMA4.x
-            mstore(add(_vk, 0x3e0), 0x290632b685d763d0e076eb35cbe0976bcf790a85a953d93206a490357bab4e6a) // vk.SIGMA4.y
+            mstore(add(_vk, 0x300), 0x0863ac4bfbe68110f29bb44ddc839cff7d0955dd8d14cd97e1bf55ac5e23606d) // vk.SIGMA1.x
+            mstore(add(_vk, 0x320), 0x087b4eccf70a052d27f78dc1dbd463d3d1da12e863bda654420191ee6ae4a721) // vk.SIGMA1.y
+            mstore(add(_vk, 0x340), 0x06d7e774d5b14a71677ecaea268f9fd11499e8e40f4d3d191be72ab8fb51c03f) // vk.SIGMA2.x
+            mstore(add(_vk, 0x360), 0x0cb2dbfdbbcf29bca4458c28367ed20bc6722ab7705cfc7d9c4c90ecc1e6e10c) // vk.SIGMA2.y
+            mstore(add(_vk, 0x380), 0x05ba462e284aacade4a428e72048c2879cd82371902ed0f0ba81ae06fcdddeb1) // vk.SIGMA3.x
+            mstore(add(_vk, 0x3a0), 0x1aca7a3280269eaecc63b255ff4d2ae27286fa68d10bfa9e9a9844a026ca51f3) // vk.SIGMA3.y
+            mstore(add(_vk, 0x3c0), 0x06edf8035766440746c5421677922916d2b6b32d0d737e076271bbfd82a31acc) // vk.SIGMA4.x
+            mstore(add(_vk, 0x3e0), 0x2862d8a346b21984c18cb50690288793cfd407c80905dcbb5e5ad1d20332d830) // vk.SIGMA4.y
             mstore(add(_vk, 0x400), 0x179d784ddf9483351fad41f4cfb3180e556973dc107dc87e9914abd00dcfa1b1) // vk.TABLE1.x
             mstore(add(_vk, 0x420), 0x0a65e74b474718b0cb8043103d4e5f01a4d613220ae46cd6a70328e004e65770) // vk.TABLE1.y
             mstore(add(_vk, 0x440), 0x00c31191d16fe1292931fc0735c7fdacdb34d999c2ce09289fd45118ed2a1e9b) // vk.TABLE2.x
@@ -50,16 +50,16 @@ library UltraVerificationKey {
             mstore(add(_vk, 0x4a0), 0x25c62f92efda052ba683f50821f419cf28ca431b22752c14641058f63eddd782) // vk.TABLE3.y
             mstore(add(_vk, 0x4c0), 0x2e71726ec1632f85b7ead76912e828d0c83b65cf7877d92b66c23758dcd98ba1) // vk.TABLE4.x
             mstore(add(_vk, 0x4e0), 0x0e28c5a4f595724298e4f56ac35c31faa6fb86fe4ed100fae58e637557d2a192) // vk.TABLE4.y
-            mstore(add(_vk, 0x500), 0x2c37538fbce63015b7409f4f5c07dca760239a6b40432283263d894fd3bbc5d0) // vk.TABLE_TYPE.x
-            mstore(add(_vk, 0x520), 0x13983f74c2c85167eca162e9fae4e21f61d539f01a1119f9ef31199297191f5c) // vk.TABLE_TYPE.y
-            mstore(add(_vk, 0x540), 0x137d8431bcf10b7ffd3a0fb78ede6f259b560575a638eee10ea6019062e99608) // vk.ID1.x
-            mstore(add(_vk, 0x560), 0x110e83da9b6d1cf5175d37c16b04fe3d66dcc048acce7b6ea9fccdf5a57406e8) // vk.ID1.y
-            mstore(add(_vk, 0x580), 0x1ec29e8e3c3b9e3fe871d891425f21a4cee2487a9ccaaa590cf804479c97aec1) // vk.ID2.x
-            mstore(add(_vk, 0x5a0), 0x0cc9599b0829ad14295947ae3dc449eb1b806fe440a7d27665862d5f116387ec) // vk.ID2.y
-            mstore(add(_vk, 0x5c0), 0x29e00672505bea8c29fb282d53898339c1a34c1fe53e96e647716d45260a7d25) // vk.ID3.x
-            mstore(add(_vk, 0x5e0), 0x2fab11e2f7fae3fa3384baa6987065b1e46bff1920c414f4324bb57a12bafab0) // vk.ID3.y
-            mstore(add(_vk, 0x600), 0x04a0a964a0897c7c387851898240a74e7e0820d1fc882d9cac23dac33ee744b9) // vk.ID4.x
-            mstore(add(_vk, 0x620), 0x1e2bf4fd72f741916beedcef625a4c8e0bb3f3a3b952dd031ba8c203fb2972b8) // vk.ID4.y
+            mstore(add(_vk, 0x500), 0x233558bc1b1240d15e1a479c9b1dc5fb3ff627936494848217cc84aad18d6de2) // vk.TABLE_TYPE.x
+            mstore(add(_vk, 0x520), 0x0ef51e9a9b32aad1ad46cd77aac3ee21b9d892ed39746c3dd27b48d599d0d519) // vk.TABLE_TYPE.y
+            mstore(add(_vk, 0x540), 0x30232abdae4f87d6b954ac42ed6117b960739ee3b8a046dde8af58ceb155307c) // vk.ID1.x
+            mstore(add(_vk, 0x560), 0x0f9b1d8d31f958cbb9c3853513eee9abe5708beab80a32687d09a1dde1c01d26) // vk.ID1.y
+            mstore(add(_vk, 0x580), 0x192245a7bf0cab0b7020b60da7fd9f8c354592d45a11dbdcbba87887ba9bf734) // vk.ID2.x
+            mstore(add(_vk, 0x5a0), 0x28d1bd9f6e4bf54bc4526d31ece6ca180058b5291bd45e7c671dd4f6b23c638b) // vk.ID2.y
+            mstore(add(_vk, 0x5c0), 0x1e4f94a523d6a22f553d7114b344557e993b80786511203228d09fce6478481e) // vk.ID3.x
+            mstore(add(_vk, 0x5e0), 0x1aaac36ae782f45cfaa77a997f123fd577c8b7e340891353167ab92608a4551f) // vk.ID3.y
+            mstore(add(_vk, 0x600), 0x0e339a1683a49b111f6c1bf8cc2179e0cabcde390aaa8f0838e8d7bcda181af4) // vk.ID4.x
+            mstore(add(_vk, 0x620), 0x091332b39c5d42a921bfca3eb354a302c9a5a55484879756fc2f0c7f867676fd) // vk.ID4.y
             mstore(add(_vk, 0x640), 0x00) // vk.contains_recursive_proof
             mstore(add(_vk, 0x660), 0) // vk.recursive_proof_public_input_indices
             mstore(add(_vk, 0x680), 0x260e01b251f6f1c7e7ff4e580791dee8ea51d87a358e038b4efe30fac09383c1) // vk.g2_x.X.c1 
@@ -2186,253 +2186,345 @@ abstract contract BaseUltraVerifier {
             // accumulator = accumulator + accumulator_2
             success := and(success, staticcall(gas(), 6, ACCUMULATOR_X_LOC, 0x80, ACCUMULATOR_X_LOC, 0x40))
 
-            // ACCUMULATE Q1
-
-            // Verification key fields verified to be on curve at contract deployment
-            mstore(0x00, mload(Q1_X_LOC))
-            mstore(0x20, mload(Q1_Y_LOC))
+            // VALIDATE Q1
+            {
+                let x := mload(Q1_X_LOC)
+                let y := mload(Q1_Y_LOC)
+                let xx := mulmod(x, x, q)
+                // Verification key fields verified to be on curve at contract deployment
+                mstore(0x00, x)
+                mstore(0x20, y)
+            }
             mstore(0x40, mload(C_V7_LOC))
             // accumulator_2 = v7.[Q1]
             success := and(success, staticcall(gas(), 7, 0x00, 0x60, ACCUMULATOR2_X_LOC, 0x40))
             // accumulator = accumulator + accumulator_2
             success := and(success, staticcall(gas(), 6, ACCUMULATOR_X_LOC, 0x80, ACCUMULATOR_X_LOC, 0x40))
 
-            // ACCUMULATE Q2
-
-            // Verification key fields verified to be on curve at contract deployment
-            mstore(0x00, mload(Q2_X_LOC))
-            mstore(0x20, mload(Q2_Y_LOC))
+            // VALIDATE Q2
+            {
+                let x := mload(Q2_X_LOC)
+                let y := mload(Q2_Y_LOC)
+                let xx := mulmod(x, x, q)
+                // Verification key fields verified to be on curve at contract deployment
+                mstore(0x00, x)
+                mstore(0x20, y)
+            }
             mstore(0x40, mload(C_V8_LOC))
             // accumulator_2 = v8.[Q2]
             success := and(success, staticcall(gas(), 7, 0x00, 0x60, ACCUMULATOR2_X_LOC, 0x40))
             // accumulator = accumulator + accumulator_2
             success := and(success, staticcall(gas(), 6, ACCUMULATOR_X_LOC, 0x80, ACCUMULATOR_X_LOC, 0x40))
 
-            // ACCUMULATE Q3
-            
-            // Verification key fields verified to be on curve at contract deployment
-            mstore(0x00, mload(Q3_X_LOC))
-            mstore(0x20, mload(Q3_Y_LOC))
+            // VALIDATE Q3
+            {
+                let x := mload(Q3_X_LOC)
+                let y := mload(Q3_Y_LOC)
+                let xx := mulmod(x, x, q)
+                // Verification key fields verified to be on curve at contract deployment
+                mstore(0x00, x)
+                mstore(0x20, y)
+            }
             mstore(0x40, mload(C_V9_LOC))
             // accumulator_2 = v9.[Q3]
             success := and(success, staticcall(gas(), 7, 0x00, 0x60, ACCUMULATOR2_X_LOC, 0x40))
             // accumulator = accumulator + accumulator_2
             success := and(success, staticcall(gas(), 6, ACCUMULATOR_X_LOC, 0x80, ACCUMULATOR_X_LOC, 0x40))
 
-            // ACCUMULATE Q4
-            
-            // Verification key fields verified to be on curve at contract deployment
-            mstore(0x00, mload(Q4_X_LOC))
-            mstore(0x20, mload(Q4_Y_LOC))
+            // VALIDATE Q4
+            {
+                let x := mload(Q4_X_LOC)
+                let y := mload(Q4_Y_LOC)
+                let xx := mulmod(x, x, q)
+                // Verification key fields verified to be on curve at contract deployment
+                mstore(0x00, x)
+                mstore(0x20, y)
+            }
             mstore(0x40, mload(C_V10_LOC))
             // accumulator_2 = v10.[Q4]
             success := and(success, staticcall(gas(), 7, 0x00, 0x60, ACCUMULATOR2_X_LOC, 0x40))
             // accumulator = accumulator + accumulator_2
             success := and(success, staticcall(gas(), 6, ACCUMULATOR_X_LOC, 0x80, ACCUMULATOR_X_LOC, 0x40))
 
-            // ACCUMULATE QM
-            
-            // Verification key fields verified to be on curve at contract deployment
-            mstore(0x00, mload(QM_X_LOC))
-            mstore(0x20, mload(QM_Y_LOC))
+            // VALIDATE QM
+            {
+                let x := mload(QM_X_LOC)
+                let y := mload(QM_Y_LOC)
+                let xx := mulmod(x, x, q)
+                // Verification key fields verified to be on curve at contract deployment
+                mstore(0x00, x)
+                mstore(0x20, y)
+            }
             mstore(0x40, mload(C_V11_LOC))
             // accumulator_2 = v11.[Q;]
             success := and(success, staticcall(gas(), 7, 0x00, 0x60, ACCUMULATOR2_X_LOC, 0x40))
             // accumulator = accumulator + accumulator_2
             success := and(success, staticcall(gas(), 6, ACCUMULATOR_X_LOC, 0x80, ACCUMULATOR_X_LOC, 0x40))
 
-            // ACCUMULATE QC
-
-            // Verification key fields verified to be on curve at contract deployment
-            mstore(0x00, mload(QC_X_LOC))
-            mstore(0x20, mload(QC_Y_LOC))
+            // VALIDATE QC
+            {
+                let x := mload(QC_X_LOC)
+                let y := mload(QC_Y_LOC)
+                let xx := mulmod(x, x, q)
+                // Verification key fields verified to be on curve at contract deployment
+                mstore(0x00, x)
+                mstore(0x20, y)
+            }
             mstore(0x40, mload(C_V12_LOC))
             // accumulator_2 = v12.[QC]
             success := and(success, staticcall(gas(), 7, 0x00, 0x60, ACCUMULATOR2_X_LOC, 0x40))
             // accumulator = accumulator + accumulator_2
             success := and(success, staticcall(gas(), 6, ACCUMULATOR_X_LOC, 0x80, ACCUMULATOR_X_LOC, 0x40))
 
-            // ACCUMULATE QARITH
-
-            // Verification key fields verified to be on curve at contract deployment
-            mstore(0x00, mload(QARITH_X_LOC))
-            mstore(0x20, mload(QARITH_Y_LOC))
+            // VALIDATE QARITH
+            {
+                let x := mload(QARITH_X_LOC)
+                let y := mload(QARITH_Y_LOC)
+                let xx := mulmod(x, x, q)
+                // Verification key fields verified to be on curve at contract deployment
+                mstore(0x00, x)
+                mstore(0x20, y)
+            }
             mstore(0x40, mload(C_V13_LOC))
             // accumulator_2 = v13.[QARITH]
             success := and(success, staticcall(gas(), 7, 0x00, 0x60, ACCUMULATOR2_X_LOC, 0x40))
             // accumulator = accumulator + accumulator_2
             success := and(success, staticcall(gas(), 6, ACCUMULATOR_X_LOC, 0x80, ACCUMULATOR_X_LOC, 0x40))
 
-            // ACCUMULATE QSORT
-
-            // Verification key fields verified to be on curve at contract deployment
-            mstore(0x00, mload(QSORT_X_LOC))
-            mstore(0x20, mload(QSORT_Y_LOC))
+            // VALIDATE QSORT
+            {
+                let x := mload(QSORT_X_LOC)
+                let y := mload(QSORT_Y_LOC)
+                let xx := mulmod(x, x, q)
+                // Verification key fields verified to be on curve at contract deployment
+                mstore(0x00, x)
+                mstore(0x20, y)
+            }
             mstore(0x40, mload(C_V14_LOC))
             // accumulator_2 = v14.[QSORT]
             success := and(success, staticcall(gas(), 7, 0x00, 0x60, ACCUMULATOR2_X_LOC, 0x40))
             // accumulator = accumulator + accumulator_2
             success := and(success, staticcall(gas(), 6, ACCUMULATOR_X_LOC, 0x80, ACCUMULATOR_X_LOC, 0x40))
 
-            // ACCUMULATE QELLIPTIC
-
-            // Verification key fields verified to be on curve at contract deployment
-            mstore(0x00, mload(QELLIPTIC_X_LOC))
-            mstore(0x20, mload(QELLIPTIC_Y_LOC))
+            // VALIDATE QELLIPTIC
+            {
+                let x := mload(QELLIPTIC_X_LOC)
+                let y := mload(QELLIPTIC_Y_LOC)
+                let xx := mulmod(x, x, q)
+                // Verification key fields verified to be on curve at contract deployment
+                mstore(0x00, x)
+                mstore(0x20, y)
+            }
             mstore(0x40, mload(C_V15_LOC))
             // accumulator_2 = v15.[QELLIPTIC]
             success := and(success, staticcall(gas(), 7, 0x00, 0x60, ACCUMULATOR2_X_LOC, 0x40))
             // accumulator = accumulator + accumulator_2
             success := and(success, staticcall(gas(), 6, ACCUMULATOR_X_LOC, 0x80, ACCUMULATOR_X_LOC, 0x40))
 
-            // ACCUMULATE QAUX
-
-            // Verification key fields verified to be on curve at contract deployment
-            mstore(0x00, mload(QAUX_X_LOC))
-            mstore(0x20, mload(QAUX_Y_LOC))
+            // VALIDATE QAUX
+            {
+                let x := mload(QAUX_X_LOC)
+                let y := mload(QAUX_Y_LOC)
+                let xx := mulmod(x, x, q)
+                // Verification key fields verified to be on curve at contract deployment
+                mstore(0x00, x)
+                mstore(0x20, y)
+            }
             mstore(0x40, mload(C_V16_LOC))
             // accumulator_2 = v15.[Q_AUX]
             success := and(success, staticcall(gas(), 7, 0x00, 0x60, ACCUMULATOR2_X_LOC, 0x40))
             // accumulator = accumulator + accumulator_2
             success := and(success, staticcall(gas(), 6, ACCUMULATOR_X_LOC, 0x80, ACCUMULATOR_X_LOC, 0x40))
 
-            // ACCUMULATE SIGMA1
-
-            // Verification key fields verified to be on curve at contract deployment
-            mstore(0x00, mload(SIGMA1_X_LOC))
-            mstore(0x20, mload(SIGMA1_Y_LOC))
+            // VALIDATE SIGMA1
+            {
+                let x := mload(SIGMA1_X_LOC)
+                let y := mload(SIGMA1_Y_LOC)
+                let xx := mulmod(x, x, q)
+                // Verification key fields verified to be on curve at contract deployment
+                mstore(0x00, x)
+                mstore(0x20, y)
+            }
             mstore(0x40, mload(C_V17_LOC))
             // accumulator_2 = v17.[sigma1]
             success := and(success, staticcall(gas(), 7, 0x00, 0x60, ACCUMULATOR2_X_LOC, 0x40))
             // accumulator = accumulator + accumulator_2
             success := and(success, staticcall(gas(), 6, ACCUMULATOR_X_LOC, 0x80, ACCUMULATOR_X_LOC, 0x40))
 
-            // ACCUMULATE SIGMA2
-
-            // Verification key fields verified to be on curve at contract deployment
-            mstore(0x00, mload(SIGMA2_X_LOC))
-            mstore(0x20, mload(SIGMA2_Y_LOC))
+            // VALIDATE SIGMA2
+            {
+                let x := mload(SIGMA2_X_LOC)
+                let y := mload(SIGMA2_Y_LOC)
+                let xx := mulmod(x, x, q)
+                // Verification key fields verified to be on curve at contract deployment
+                mstore(0x00, x)
+                mstore(0x20, y)
+            }
             mstore(0x40, mload(C_V18_LOC))
             // accumulator_2 = v18.[sigma2]
             success := and(success, staticcall(gas(), 7, 0x00, 0x60, ACCUMULATOR2_X_LOC, 0x40))
             // accumulator = accumulator + accumulator_2
             success := and(success, staticcall(gas(), 6, ACCUMULATOR_X_LOC, 0x80, ACCUMULATOR_X_LOC, 0x40))
 
-            // ACCUMULATE SIGMA3
-
-            // Verification key fields verified to be on curve at contract deployment
-            mstore(0x00, mload(SIGMA3_X_LOC))
-            mstore(0x20, mload(SIGMA3_Y_LOC))
+            // VALIDATE SIGMA3
+            {
+                let x := mload(SIGMA3_X_LOC)
+                let y := mload(SIGMA3_Y_LOC)
+                let xx := mulmod(x, x, q)
+                // Verification key fields verified to be on curve at contract deployment
+                mstore(0x00, x)
+                mstore(0x20, y)
+            }
             mstore(0x40, mload(C_V19_LOC))
             // accumulator_2 = v19.[sigma3]
             success := and(success, staticcall(gas(), 7, 0x00, 0x60, ACCUMULATOR2_X_LOC, 0x40))
             // accumulator = accumulator + accumulator_2
             success := and(success, staticcall(gas(), 6, ACCUMULATOR_X_LOC, 0x80, ACCUMULATOR_X_LOC, 0x40))
 
-            // ACCUMULATE SIGMA4
-
-            // Verification key fields verified to be on curve at contract deployment
-            mstore(0x00, mload(SIGMA4_X_LOC))
-            mstore(0x20, mload(SIGMA4_Y_LOC))
+            // VALIDATE SIGMA4
+            {
+                let x := mload(SIGMA4_X_LOC)
+                let y := mload(SIGMA4_Y_LOC)
+                let xx := mulmod(x, x, q)
+                // Verification key fields verified to be on curve at contract deployment
+                mstore(0x00, x)
+                mstore(0x20, y)
+            }
             mstore(0x40, mload(C_V20_LOC))
             // accumulator_2 = v20.[sigma4]
             success := and(success, staticcall(gas(), 7, 0x00, 0x60, ACCUMULATOR2_X_LOC, 0x40))
             // accumulator = accumulator + accumulator_2
             success := and(success, staticcall(gas(), 6, ACCUMULATOR_X_LOC, 0x80, ACCUMULATOR_X_LOC, 0x40))
 
-            // ACCUMULATE TABLE1
-
-            // Verification key fields verified to be on curve at contract deployment
-            mstore(0x00, mload(TABLE1_X_LOC))
-            mstore(0x20, mload(TABLE1_Y_LOC))
+            // VALIDATE TABLE1
+            {
+                let x := mload(TABLE1_X_LOC)
+                let y := mload(TABLE1_Y_LOC)
+                let xx := mulmod(x, x, q)
+                // Verification key fields verified to be on curve at contract deployment
+                mstore(0x00, x)
+                mstore(0x20, y)
+            }
             mstore(0x40, mulmod(addmod(mload(C_U_LOC), 0x1, p), mload(C_V21_LOC), p))
             // accumulator_2 = u.[table1]
             success := and(success, staticcall(gas(), 7, 0x00, 0x60, ACCUMULATOR2_X_LOC, 0x40))
             // accumulator = accumulator + accumulator_2
             success := and(success, staticcall(gas(), 6, ACCUMULATOR_X_LOC, 0x80, ACCUMULATOR_X_LOC, 0x40))
 
-            // ACCUMULATE TABLE2
-
-            // Verification key fields verified to be on curve at contract deployment
-            mstore(0x00, mload(TABLE2_X_LOC))
-            mstore(0x20, mload(TABLE2_Y_LOC))
+            // VALIDATE TABLE2
+            {
+                let x := mload(TABLE2_X_LOC)
+                let y := mload(TABLE2_Y_LOC)
+                let xx := mulmod(x, x, q)
+                // Verification key fields verified to be on curve at contract deployment
+                mstore(0x00, x)
+                mstore(0x20, y)
+            }
             mstore(0x40, mulmod(addmod(mload(C_U_LOC), 0x1, p), mload(C_V22_LOC), p))
             // accumulator_2 = u.[table2]
             success := and(success, staticcall(gas(), 7, 0x00, 0x60, ACCUMULATOR2_X_LOC, 0x40))
             // accumulator = accumulator + accumulator_2
             success := and(success, staticcall(gas(), 6, ACCUMULATOR_X_LOC, 0x80, ACCUMULATOR_X_LOC, 0x40))
 
-            // ACCUMULATE TABLE3
-
-            // Verification key fields verified to be on curve at contract deployment
-            mstore(0x00, mload(TABLE3_X_LOC))
-            mstore(0x20, mload(TABLE3_Y_LOC))
+            // VALIDATE TABLE3
+            {
+                let x := mload(TABLE3_X_LOC)
+                let y := mload(TABLE3_Y_LOC)
+                let xx := mulmod(x, x, q)
+                // Verification key fields verified to be on curve at contract deployment
+                mstore(0x00, x)
+                mstore(0x20, y)
+            }
             mstore(0x40, mulmod(addmod(mload(C_U_LOC), 0x1, p), mload(C_V23_LOC), p))
             // accumulator_2 = u.[table3]
             success := and(success, staticcall(gas(), 7, 0x00, 0x60, ACCUMULATOR2_X_LOC, 0x40))
             // accumulator = accumulator + accumulator_2
             success := and(success, staticcall(gas(), 6, ACCUMULATOR_X_LOC, 0x80, ACCUMULATOR_X_LOC, 0x40))
 
-            // ACCUMULATE TABLE4
-
-            // Verification key fields verified to be on curve at contract deployment
-            mstore(0x00, mload(TABLE4_X_LOC))
-            mstore(0x20, mload(TABLE4_Y_LOC))
+            // VALIDATE TABLE4
+            {
+                let x := mload(TABLE4_X_LOC)
+                let y := mload(TABLE4_Y_LOC)
+                let xx := mulmod(x, x, q)
+                // Verification key fields verified to be on curve at contract deployment
+                mstore(0x00, x)
+                mstore(0x20, y)
+            }
             mstore(0x40, mulmod(addmod(mload(C_U_LOC), 0x1, p), mload(C_V24_LOC), p))
             // accumulator_2 = u.[table4]
             success := and(success, staticcall(gas(), 7, 0x00, 0x60, ACCUMULATOR2_X_LOC, 0x40))
             // accumulator = accumulator + accumulator_2
             success := and(success, staticcall(gas(), 6, ACCUMULATOR_X_LOC, 0x80, ACCUMULATOR_X_LOC, 0x40))
 
-            // ACCUMULATE TABLE_TYPE
-
-            // Verification key fields verified to be on curve at contract deployment
-            mstore(0x00, mload(TABLE_TYPE_X_LOC))
-            mstore(0x20, mload(TABLE_TYPE_Y_LOC))
+            // VALIDATE TABLE_TYPE
+            {
+                let x := mload(TABLE_TYPE_X_LOC)
+                let y := mload(TABLE_TYPE_Y_LOC)
+                let xx := mulmod(x, x, q)
+                // Verification key fields verified to be on curve at contract deployment
+                mstore(0x00, x)
+                mstore(0x20, y)
+            }
             mstore(0x40, mload(C_V25_LOC))
             // accumulator_2 = v25.[TableType]
             success := and(success, staticcall(gas(), 7, 0x00, 0x60, ACCUMULATOR2_X_LOC, 0x40))
             // accumulator = accumulator + accumulator_2
             success := and(success, staticcall(gas(), 6, ACCUMULATOR_X_LOC, 0x80, ACCUMULATOR_X_LOC, 0x40))
 
-            // ACCUMULATE ID1
-
-            // Verification key fields verified to be on curve at contract deployment
-            mstore(0x00, mload(ID1_X_LOC))
-            mstore(0x20, mload(ID1_Y_LOC))
+            // VALIDATE ID1
+            {
+                let x := mload(ID1_X_LOC)
+                let y := mload(ID1_Y_LOC)
+                let xx := mulmod(x, x, q)
+                // Verification key fields verified to be on curve at contract deployment
+                mstore(0x00, x)
+                mstore(0x20, y)
+            }
             mstore(0x40, mload(C_V26_LOC))
             // accumulator_2 = v26.[ID1]
             success := and(success, staticcall(gas(), 7, 0x00, 0x60, ACCUMULATOR2_X_LOC, 0x40))
             // accumulator = accumulator + accumulator_2
             success := and(success, staticcall(gas(), 6, ACCUMULATOR_X_LOC, 0x80, ACCUMULATOR_X_LOC, 0x40))
 
-            // ACCUMULATE ID2
-
-            // Verification key fields verified to be on curve at contract deployment
-            mstore(0x00, mload(ID2_X_LOC))
-            mstore(0x20, mload(ID2_Y_LOC))
+            // VALIDATE ID2
+            {
+                let x := mload(ID2_X_LOC)
+                let y := mload(ID2_Y_LOC)
+                let xx := mulmod(x, x, q)
+                // Verification key fields verified to be on curve at contract deployment
+                mstore(0x00, x)
+                mstore(0x20, y)
+            }
             mstore(0x40, mload(C_V27_LOC))
             // accumulator_2 = v27.[ID2]
             success := and(success, staticcall(gas(), 7, 0x00, 0x60, ACCUMULATOR2_X_LOC, 0x40))
             // accumulator = accumulator + accumulator_2
             success := and(success, staticcall(gas(), 6, ACCUMULATOR_X_LOC, 0x80, ACCUMULATOR_X_LOC, 0x40))
 
-            // ACCUMULATE ID3
-
-            // Verification key fields verified to be on curve at contract deployment
-            mstore(0x00, mload(ID3_X_LOC))
-            mstore(0x20, mload(ID3_Y_LOC))
+            // VALIDATE ID3
+            {
+                let x := mload(ID3_X_LOC)
+                let y := mload(ID3_Y_LOC)
+                let xx := mulmod(x, x, q)
+                // Verification key fields verified to be on curve at contract deployment
+                mstore(0x00, x)
+                mstore(0x20, y)
+            }
             mstore(0x40, mload(C_V28_LOC))
             // accumulator_2 = v28.[ID3]
             success := and(success, staticcall(gas(), 7, 0x00, 0x60, ACCUMULATOR2_X_LOC, 0x40))
             // accumulator = accumulator + accumulator_2
             success := and(success, staticcall(gas(), 6, ACCUMULATOR_X_LOC, 0x80, ACCUMULATOR_X_LOC, 0x40))
 
-            // ACCUMULATE ID4
-
-            // Verification key fields verified to be on curve at contract deployment
-            mstore(0x00, mload(ID4_X_LOC))
-            mstore(0x20, mload(ID4_Y_LOC))
+            // VALIDATE ID4
+            {
+                let x := mload(ID4_X_LOC)
+                let y := mload(ID4_Y_LOC)
+                let xx := mulmod(x, x, q)
+                // Verification key fields verified to be on curve at contract deployment
+                mstore(0x00, x)
+                mstore(0x20, y)
+            }
             mstore(0x40, mload(C_V29_LOC))
             // accumulator_2 = v29.[ID4]
             success := and(success, staticcall(gas(), 7, 0x00, 0x60, ACCUMULATOR2_X_LOC, 0x40))
