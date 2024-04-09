@@ -6,6 +6,7 @@ import uvicorn
 
 app = FastAPI()
 
+
 class ProofRequest(BaseModel):
     data: dict
 
@@ -37,6 +38,7 @@ async def create_proof(request: ProofRequest):
         proof = fp.read()
     return {"proof": proof}
 
+
 @app.post('/verify-proof')
 async def verify_proof(request: ProofRequest):
     """
@@ -53,10 +55,13 @@ async def verify_proof(request: ProofRequest):
             }
         }'
     """
-    verify_result = subprocess.run(['nargo', 'verify', json.dumps(request.data)], capture_output=True, text=True)
-    if verify_result.returncode != 0:
-        raise HTTPException(status_code=500, detail=f"Failed to verify proof: {verify_result.stderr}")
-    return {"result": verify_result.stdout}
+    verify_result = subprocess.run(['nargo', 'verify', ], capture_output=True, text=True)
+    if verify_result.returncode == 0:
+        return {"result": True}
+    elif verify_result.returncode == 1 and "Failed to verify proof /app/proofs/scarif.proof" in verify_result.stderr:
+        return {"result": False}
+    raise HTTPException(status_code=500, detail=verify_result.stderr)
+
 
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8080)
